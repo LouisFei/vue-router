@@ -3,12 +3,12 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-// A route component can also contain <router-view> to render
-// nested children route components
+// A route component can also contain <router-view> to render nested children route components
+// 路由组件还可以包含<router-view>来呈现嵌套的子路由组件
 const Parent = {
   template: `
     <div class="parent">
-      <h2>Parent</h2>
+      <h2>Parent 父组件</h2>
       <router-view class="child"></router-view>
     </div>
   `
@@ -22,7 +22,7 @@ const Baz = { template: '<div>baz</div>' }
 const Qux = {
   template: `
     <div class="nested-parent">
-      <h3>qux</h3>
+      <h3>qux 内嵌的父组件1</h3>
       <router-link :to="{ name: 'quux' }">/quux</router-link>
       <router-view class="nested-child"></router-view>
     </div>
@@ -31,7 +31,7 @@ const Qux = {
 const Quy = {
   template: `
     <div class="nested-parent-other">
-      <h3>quy</h3>
+      <h3>quy 内嵌的父组件2</h3>
       <pre>{{ JSON.stringify(Object.keys($route.params)) }}</pre>
     </div>
   `
@@ -39,6 +39,7 @@ const Quy = {
 const Quux = { template: '<div>quux</div>' }
 const Zap = { template: '<div><h3>zap</h3><pre>{{ $route.params.zapId }}</pre></div>' }
 
+// 路由器实例
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
@@ -80,7 +81,7 @@ new Vue({
   router,
   template: `
     <div id="app">
-      <h1>Nested Routes</h1>
+      <h1>Nested Routes 嵌套路由</h1>
       <ul>
         <li><router-link to="/parent">/parent</router-link></li>
         <li><router-link to="/parent/foo">/parent/foo</router-link></li>

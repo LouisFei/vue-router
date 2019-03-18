@@ -29,7 +29,7 @@ new Vue({
   router,
   template: `
     <div id="app">
-      <h1>Route Matching</h1>
+      <h1>Route Matching 路由匹配</h1>
       <ul>
         <li><router-link to="/">/</router-link></li>
         <li><router-link to="/params/foo/bar">/params/foo/bar</router-link></li>
@@ -41,8 +41,10 @@ new Vue({
         <li><router-link to="/asterisk/foo/bar">/asterisk/foo/bar</router-link></li>
         <li><router-link to="/optional-group/bar">/optional-group/bar</router-link></li>
         <li><router-link to="/optional-group/foo/bar">/optional-group/foo/bar</router-link></li>
+        <li><router-link to="/user/louis">User (id=louis)</router-link></li>
+        <li><router-link to="/user/mark">User (id=mark)</router-link></li>
       </ul>
-      <p>Route context</p>
+      <p>Route context 路由器上下文</p>
       <pre>{{ JSON.stringify($route, null, 2) }}</pre>
     </div>
   `
